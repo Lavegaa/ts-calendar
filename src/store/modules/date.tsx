@@ -34,6 +34,10 @@ function Select(
   };
 }
 
+export const actionCreator = {
+  Select
+};
+
 //initial state
 export interface DateState {
   currentDay: number;
