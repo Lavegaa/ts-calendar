@@ -6,12 +6,12 @@ import { RootState } from "../../store/rootReducer";
 import ViewComponent from "./ViewComponent";
 
 export default function Calendar() {
-  let date = new Date();
-  let today = date.getDate();
-  let [currentMonth, setCurrentMonth] = useState(date.getMonth());
-  let [currentYear, setCurrentYear] = useState(date.getFullYear());
-  const fixMonth = date.getMonth();
-  const fixYear = date.getFullYear();
+  let date: Date = new Date();
+  let today: number = date.getDate();
+  let [currentMonth, setCurrentMonth] = useState<number>(date.getMonth());
+  let [currentYear, setCurrentYear] = useState<number>(date.getFullYear());
+  const fixMonth: number = date.getMonth();
+  const fixYear: number = date.getFullYear();
   const dispatch = useDispatch();
 
   const selectCalendar = (
@@ -21,7 +21,7 @@ export default function Calendar() {
     currentYear: number
   ) =>
     dispatch(
-      dateActions.Select(currentDay, currentWeek, currentMonth, currentYear)
+      dateActions.Select(currentDay, currentWeek + 1, currentMonth, currentYear)
     );
   //날짜별 todolist를 달력에 그려준다.
   useEffect(() => {
@@ -33,12 +33,12 @@ export default function Calendar() {
   }));
 
   //다음달로 이동한다.
-  const next = () => {
+  const next = (): void => {
     setCurrentYear(currentMonth === 11 ? currentYear + 1 : currentYear);
     setCurrentMonth((currentMonth + 1) % 12);
   };
   //이전달로 이동한다.
-  const previous = () => {
+  const previous = (): void => {
     setCurrentYear(currentMonth === 0 ? currentYear - 1 : currentYear);
     setCurrentMonth(currentMonth === 0 ? 11 : currentMonth - 1);
   };

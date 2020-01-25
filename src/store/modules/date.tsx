@@ -19,16 +19,16 @@ export type DateActionType = Select;
 
 function Select(
   currentDay: number,
-  currentWeek: number,
   currentMonth: number,
+  currentWeek: number,
   currentYear: number
 ) {
   return {
     type: SELECT,
     payload: {
       currentDay: currentDay,
-      currentWeek: currentWeek,
       currentMonth: currentMonth,
+      currentWeek: currentWeek,
       currentYear: currentYear
     }
   };
@@ -53,8 +53,8 @@ let currentYear: number = today.getFullYear();
 
 const initialState: DateState = {
   currentDay: currentDay,
-  currentWeek: currentWeek,
   currentMonth: currentMonth,
+  currentWeek: currentWeek,
   currentYear: currentYear
 };
 //reducer
@@ -67,8 +67,8 @@ export function dateReducer(
     case SELECT:
       return {
         currentDay: action.payload.currentDay,
-        currentWeek: action.payload.currentWeek,
         currentMonth: action.payload.currentMonth,
+        currentWeek: action.payload.currentWeek,
         currentYear: action.payload.currentYear
       };
     default:

@@ -107,7 +107,7 @@ export const actionCreator = {
 };
 //initial state
 
-interface TodosData {
+export interface TodosData {
   id: number;
   year: number;
   month: number;

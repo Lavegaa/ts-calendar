@@ -128,6 +128,10 @@ const StyledSection = styled.div`
   }
 `;
 
+const Tr = styled.tr`
+  vertical-align: top;
+`;
+
 interface CalendarTodoProps {
   ToDay: number;
   DoDay: number;
@@ -172,7 +176,7 @@ function CalendarTodo({ ToDay, DoDay }: CalendarTodoProps) {
   );
 }
 
-function ViewComponent({
+export default function ViewComponent({
   today,
   currentMonth,
   currentYear,
@@ -194,8 +198,13 @@ function ViewComponent({
     for (let j = 0; j < 7; j++) {
       let innerDate = date;
       let innerWeek = j;
-      const innerSelect = () => {
-        selectCalendar(innerDate, currentMonth + 1, innerWeek, currentYear);
+      const innerSelect = (
+        innerDate: number,
+        currentMonth: number,
+        innerWeek: number,
+        currentYear: number
+      ) => {
+        selectCalendar(innerDate, currentMonth, innerWeek, currentYear);
       };
       if (i === 0 && j < firstDay) {
         weekly.push(<StyledTd></StyledTd>);
@@ -213,7 +222,11 @@ function ViewComponent({
         }
         did = true;
         weekly.push(
-          <StyledTd onClick={() => innerSelect()}>
+          <StyledTd
+            onClick={() =>
+              innerSelect(innerDate, currentMonth, innerWeek, currentYear)
+            }
+          >
             <StyledDay today={check}>
               <div>{date}</div>
             </StyledDay>
@@ -231,7 +244,7 @@ function ViewComponent({
     if (end && did === false) {
       break;
     }
-    items.push(<tr>{weekly}</tr>);
+    items.push(<Tr>{weekly}</Tr>);
   }
 
   return (
@@ -260,5 +273,3 @@ function ViewComponent({
     </StyledCalendar>
   );
 }
-
-export default ViewComponent;
