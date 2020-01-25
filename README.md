@@ -1,44 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 캘린더 + 투두리스트 with. typescript
 
-## Available Scripts
+typescript를 사용해 (https://github.com/Lavegaa/react-calendar) 의 프로젝트를 리팩토링 했다.
 
-In the project directory, you can run:
+react와 hooks 그리고 redux를 사용해 캘린더와 투두리스트를 제작했다.
 
-### `yarn start`
+![캘린더+투두리스트](https://user-images.githubusercontent.com/34911173/73122407-f7ffce00-3fc7-11ea-8347-d30c3486bffa.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 빠른시작
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 클론
 
-### `yarn test`
+```
+git clone https://github.com/Lavegaa/ts-calendar.git
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## dependencies 설치
 
-### `yarn build`
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+or
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+yarn
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 시작
 
-### `yarn eject`
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+or
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Store
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## date
+달력에서 날짜를 선택하는 관리하는 로직을 담고있다.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## todolist
+투두리스트의 기본 CRUD 로직과 달력에서 선택된 날짜에 따른 투두리스트를 필터링해주는 로직을 담고있다. 
