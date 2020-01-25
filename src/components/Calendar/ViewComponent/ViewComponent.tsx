@@ -139,11 +139,11 @@ interface dayTodo {
 }
 
 interface ViewComponentProps {
-  today: string;
+  today: number;
   currentMonth: number;
   currentYear: number;
-  fixMonth: string;
-  fixYear: string;
+  fixMonth: number;
+  fixYear: number;
   previous: () => void;
   next: () => void;
   selectCalendar: (
@@ -205,9 +205,9 @@ function ViewComponent({
       } else {
         let check = false;
         if (
-          parseInt(today) === innerDate &&
-          parseInt(fixMonth) === currentMonth &&
-          parseInt(fixYear) === currentYear
+          today === innerDate &&
+          fixMonth === currentMonth &&
+          fixYear === currentYear
         ) {
           check = true;
         }

@@ -14,3 +14,4 @@ const rootReducer = combineReducers<StoreState>({
 });
 
 export default rootReducer;
+export type RootState = ReturnType<typeof rootReducer>;
